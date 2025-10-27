@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/paul/e-inkPicoCalendar/CreateCalendarImage.py", line 8, in <module>
-    from iCalendarHelper import *
-  File "/home/paul/e-inkPicoCalendar/iCalendarHelper.py", line 4, in <module>
-    import icalendar
-ModuleNotFoundError: No module named 'icalendar'
