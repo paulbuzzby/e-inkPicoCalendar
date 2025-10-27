@@ -2,5 +2,6 @@
 /.venv
 /.vscode
 /e-Paper-master
-logfile.log
+/display
+*.log
 config.json
