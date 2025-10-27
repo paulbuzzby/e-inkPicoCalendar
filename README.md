@@ -77,3 +77,27 @@ Should look like
     "shutdownOnUpdate":true
 }
 ```
+
+## Python commands needed
+
+```bash
+python -m http.server 9000 --directory /home/paul/e-inkPicoCalendar/display
+```
+This will launch a web server to host the files that the pico can then download
+
+## CRONTab updates
+
+edit CRONTAB via 
+
+```
+sudo crontab -e
+```
+
+Then add this line so that the server to server the calendar image is loaded when the server reboots
+```
+@reboot sleep 30; sudo python -m http.server 9000 --directory /home/paul/e-inkPicoCalendar/display &
+```
+
+
+
+@reboot sleep 30; cd /home/pi/e-inkCalendar && sudo python3 main.py &
