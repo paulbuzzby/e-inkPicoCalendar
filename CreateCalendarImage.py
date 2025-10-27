@@ -32,4 +32,17 @@ calendarFile = GetCalendarFile(logger, icsLocation)
 calEvents = ExtractCalendarEvents(calendarFile, start_date, end_date)
 eventsImage = BuildEvents(calEvents)
 
-eventsImage.show()
+#eventsImage.show()
+eventsImage.save('calendar_test.png')
+im = eventsImage.convert("L")
+im = im.transpose(Image.ROTATE_90)
+# 1-bit, no dithering for clean pixels
+mono = im.convert("1", dither=Image.NONE)
+
+# E-ink drivers often want inverted polarity
+
+mono = ImageOps.invert(mono.convert("L")).convert("1", dither=Image.NONE)
+
+# File for the Pico (PBM P4). Windows Photos won’t open it. That’s fine.
+mono.save("calendar_test.pbm")
+print("Done")

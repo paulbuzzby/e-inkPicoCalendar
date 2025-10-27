@@ -1,7 +1,7 @@
 #https://code-maven.com/create-images-with-python-pil-pillow
 
 import os
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from datetime import date, datetime, timedelta
 from typing import List
 
